@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera, Float } from '@react-three/drei';
-import { GlobePoints, GlobeMarkers, GlobeArcs, GlobeAtmosphere, GlobeCloud, HologramDevice } from './globe/GlobeComponents';
+import { GlobePoints, GlobeMarkers, GlobeArcs, GlobeAtmosphere, GlobeCloud } from './globe/GlobeComponents';
 
 export const InteractivePixelGlobe = () => {
   return (
@@ -28,7 +28,6 @@ export const InteractivePixelGlobe = () => {
             <GlobeArcs />
             <GlobeAtmosphere />
           </group>
-          <HologramDevice />
         </Suspense>
 
         <OrbitControls
