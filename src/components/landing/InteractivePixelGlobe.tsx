@@ -15,7 +15,7 @@ export const InteractivePixelGlobe = () => {
         }}
         className="w-full h-full"
       >
-        <PerspectiveCamera makeDefault position={[0, 0, 9]} fov={35} />
+        <PerspectiveCamera makeDefault position={[0, 0, 11]} fov={35} />
         <ambientLight intensity={0.1} />
         <pointLight position={[10, 10, 10]} intensity={1.5} color="#00E5FF" />
         <pointLight position={[-10, -10, -10]} intensity={0.8} color="#0080FF" />

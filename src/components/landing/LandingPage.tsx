@@ -11,26 +11,29 @@ import { Footer } from './Footer';
 const LandingPage = () => {
   return (
     <div className="bg-[#05070A] min-h-screen text-slate-200 selection:bg-cyan-500/30 selection:text-cyan-200">
-      <nav className="fixed top-0 left-0 w-full z-50 px-4 py-4 md:px-6 md:py-6 flex justify-center pointer-events-none">
-        <div className="w-full max-w-7xl px-4 py-3 md:px-6 md:py-3 bg-slate-900/60 border border-white/10 backdrop-blur-xl rounded-2xl md:rounded-3xl flex justify-between items-center pointer-events-auto shadow-2xl shadow-black/40">
-          <div className="flex items-center gap-2">
-             <div className="w-9 h-9 md:w-10 md:h-10 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-cyan-500/20">
-                <span className="text-white font-black italic text-base md:text-lg">S</span>
+      <nav className="fixed top-6 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-5xl z-50 pointer-events-none">
+        <div className="px-4 py-2 md:px-6 md:py-2.5 bg-black/40 border border-white/10 backdrop-blur-2xl rounded-2xl flex justify-between items-center pointer-events-auto shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+          <div className="flex items-center gap-3">
+             <div className="relative group">
+               <div className="absolute inset-0 bg-cyan-500 blur-lg opacity-20 group-hover:opacity-40 transition-opacity" />
+               <div className="relative w-8 h-8 md:w-9 md:h-9 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-lg flex items-center justify-center shadow-lg">
+                  <span className="text-white font-black italic text-base">S</span>
+               </div>
              </div>
-             <span className="text-white font-black tracking-tighter text-xl md:text-2xl italic hidden xs:block">SWIMVPN+</span>
+             <span className="text-white font-black tracking-tighter text-lg md:text-xl italic hidden xs:block">SWIMVPN+</span>
           </div>
           
           <div className="flex items-center gap-4 md:gap-8">
-            <div className="hidden md:flex gap-6 text-xs font-black text-slate-400 uppercase tracking-widest">
-              <a href="#features" className="hover:text-cyan-400 transition-colors">Features</a>
-              <a href="#download-apk" className="hover:text-cyan-400 transition-colors">Protocol</a>
-              <a href="#download-apk" className="hover:text-cyan-400 transition-colors">Download</a>
+            <div className="hidden md:flex gap-8 text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] font-mono">
+              <a href="#features" className="hover:text-cyan-400 transition-colors">/FEATURES</a>
+              <a href="#protocol" className="hover:text-cyan-400 transition-colors">/PROTOCOL</a>
+              <a href="#download" className="hover:text-cyan-400 transition-colors">/DOWNLOAD</a>
             </div>
             <a 
               href="#download-apk" 
-              className="px-4 py-2 md:px-6 md:py-2.5 bg-white text-black text-[10px] md:text-xs font-black rounded-lg md:rounded-xl hover:bg-cyan-50 transition-all uppercase tracking-tighter shadow-xl shadow-white/5"
+              className="px-4 py-2 md:px-5 md:py-2 bg-cyan-500 text-black text-[10px] font-black rounded-lg hover:bg-cyan-400 transition-all uppercase tracking-tight shadow-[0_0_20px_rgba(6,182,212,0.3)]"
             >
-              GET APK
+              FETCH APK
             </a>
           </div>
         </div>

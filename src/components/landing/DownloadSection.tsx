@@ -6,49 +6,52 @@ export const DownloadSection = () => {
   return (
     <section id="download-apk" className="py-32 px-6 relative overflow-hidden">
       {/* Background effects */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-[500px] bg-blue-600/10 blur-[160px] rounded-full" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-[500px] bg-cyan-600/5 blur-[160px] rounded-full" />
       
       <div className="container mx-auto max-w-4xl relative z-10">
-        <div className="bg-slate-900/60 border border-white/10 rounded-[3rem] p-12 md:p-20 text-center backdrop-blur-3xl overflow-hidden relative">
-          {/* Subtle grid pattern */}
-          <div className="absolute inset-0 opacity-10 pointer-events-none" 
-               style={{ backgroundImage: 'radial-gradient(circle, #00E5FF 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+        <div className="border border-white/5 bg-black/40 rounded-[2rem] p-12 md:p-24 text-center backdrop-blur-3xl overflow-hidden relative">
+          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent" />
           
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="mb-8 flex justify-center"
+            className="mb-12 flex flex-col items-center gap-4"
           >
-            <div className="bg-cyan-500/20 p-6 rounded-full inline-block">
-              <Download className="text-cyan-400" size={48} />
+            <div className="px-4 py-1 border border-cyan-500/30 bg-cyan-500/5 rounded text-[10px] font-bold text-cyan-400 uppercase tracking-[0.4em] font-mono mb-4">
+              // DOWNLOAD_V_4_2_0
+            </div>
+            <div className="w-20 h-20 border border-white/10 rounded-3xl flex items-center justify-center relative group">
+              <div className="absolute inset-0 bg-cyan-500/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+              <Download className="text-white group-hover:text-cyan-400 transition-colors" size={32} />
             </div>
           </motion.div>
           
-          <h2 className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tighter uppercase italic">
-            Download SwimVPN+ APK
+          <h2 className="text-5xl md:text-8xl font-black text-white mb-8 tracking-tighter uppercase italic leading-[0.85]">
+            GET THE <br /> <span className="text-glow-cyan">OFFICIAL APK.</span>
           </h2>
           
-          <p className="text-slate-400 text-xl max-w-2xl mx-auto mb-12 font-medium">
-            Install the Android app and connect in seconds. Built for speed, privacy, and absolute freedom on any network.
+          <p className="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto mb-16 font-medium leading-relaxed">
+            Unrestricted access starts here. Optimized for stability, 256-bit encryption, and zero-latency performance.
           </p>
           
-          <div className="flex flex-col items-center gap-6">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-12 py-5 bg-gradient-to-r from-cyan-400 to-blue-600 text-white font-black text-xl rounded-2xl flex items-center gap-3 shadow-[0_0_40px_rgba(37,99,255,0.4)]"
+          <div className="flex flex-col items-center gap-8">
+            <motion.a
+              href="#download-apk"
+              whileHover={{ scale: 1.02, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="px-16 py-6 bg-white text-black font-black text-xl rounded-2xl flex items-center gap-4 shadow-[0_30px_60px_-15px_rgba(255,255,255,0.2)] hover:shadow-[0_40px_80px_-15px_rgba(255,255,255,0.3)] transition-all"
             >
-              <Download size={24} />
+              <Download size={28} strokeWidth={3} />
               DOWNLOAD APK
-            </motion.button>
+            </motion.a>
             
-            <div className="flex items-center gap-4 text-slate-500 text-sm font-bold tracking-widest uppercase">
-              <span className="flex items-center gap-1.5"><Smartphone size={16} /> Android APK</span>
-              <span className="w-1 h-1 bg-slate-700 rounded-full" />
-              <span>Instant Install</span>
-              <span className="w-1 h-1 bg-slate-700 rounded-full" />
-              <span>Version 2.4.0</span>
+            <div className="flex flex-wrap justify-center items-center gap-6 text-white/30 text-[10px] font-bold tracking-[0.2em] uppercase font-mono">
+              <span className="flex items-center gap-2"><Smartphone size={14} /> ANDROID_X64</span>
+              <div className="w-1 h-1 bg-white/10 rounded-full" />
+              <span>SHA-256 VERIFIED</span>
+              <div className="w-1 h-1 bg-white/10 rounded-full" />
+              <span>BUILD: 2026.04.27</span>
             </div>
           </div>
         </div>

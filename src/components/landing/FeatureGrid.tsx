@@ -49,31 +49,42 @@ const FEATURES = [
 
 export const FeatureGrid = () => {
   return (
-    <section id="features" className="py-24 px-6 bg-[#070B10]">
+    <section id="features" className="py-32 px-6 relative">
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      
       <div className="container mx-auto">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tighter">
-            BUILT FOR THE FUTURE
-          </h2>
-          <p className="text-slate-400 text-lg">
-            Experience security and performance without compromise. Designed for the most demanding network environments.
+        <div className="flex flex-col lg:flex-row items-end justify-between mb-20 gap-8">
+          <div className="max-w-2xl text-left">
+            <div className="text-cyan-400 font-mono text-xs font-bold tracking-[0.4em] mb-4 uppercase">
+              // CORE_CAPABILITIES
+            </div>
+            <h2 className="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase italic leading-none">
+              ENGINEERED FOR <br /> HIGH-STAKES ADAPTIVITY.
+            </h2>
+          </div>
+          <p className="text-slate-400 text-lg max-w-md text-left lg:text-right border-l lg:border-l-0 lg:border-r border-white/10 pl-6 lg:pl-0 lg:pr-6 py-2">
+            SwimVPN+ isn't just a client. It's a persistent networking layer that protects your digital footprint across aggressive environments.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
           {FEATURES.map((feature, idx) => (
             <motion.div
               key={idx}
-              whileHover={{ y: -5, borderColor: 'rgba(0, 229, 255, 0.3)' }}
-              className="p-8 bg-slate-900/40 border border-white/5 rounded-3xl backdrop-blur-xl transition-all duration-300"
+              whileHover={{ backgroundColor: 'rgba(255, 255, 255, 0.03)' }}
+              className="p-10 border border-white/5 transition-all duration-500 relative group overflow-hidden"
             >
-              <div className={`w-14 h-14 ${feature.bg} rounded-2xl flex items-center justify-center mb-6`}>
-                <feature.icon className={feature.color} size={28} />
+              <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-cyan-500/0 group-hover:border-cyan-500/40 transition-all duration-500" />
+              
+              <div className="text-[10px] font-mono text-white/20 mb-12 flex justify-between items-center tracking-widest uppercase">
+                <span>00{idx + 1} // SYS.MOD</span>
+                <feature.icon className="opacity-40 group-hover:opacity-100 transition-opacity text-cyan-400" size={16} />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3 tracking-tight">
+              
+              <h3 className="text-2xl font-black text-white mb-4 tracking-tighter uppercase italic">
                 {feature.title}
               </h3>
-              <p className="text-slate-400 leading-relaxed">
+              <p className="text-slate-500 leading-relaxed font-medium group-hover:text-slate-400 transition-colors">
                 {feature.text}
               </p>
             </motion.div>

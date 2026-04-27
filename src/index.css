@@ -11,5 +11,19 @@ html {
 }
 
 body {
-  @apply bg-[#05070A] text-slate-200 antialiased;
+  @apply bg-[#05070A] text-slate-200 antialiased selection:bg-cyan-500/30 selection:text-cyan-200;
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(0, 229, 255, 0.05) 0%, transparent 100%),
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 40px 40px, 40px 40px;
+}
+
+@layer utilities {
+  .text-glow-cyan {
+    text-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+  }
+  .border-glass {
+    @apply border border-white/10 backdrop-blur-xl bg-white/5;
+  }
 }

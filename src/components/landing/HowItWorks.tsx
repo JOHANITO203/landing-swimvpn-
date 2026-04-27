@@ -10,32 +10,39 @@ const STEPS = [
 
 export const HowItWorks = () => {
   return (
-    <section className="py-24 px-6 bg-[#05070A]">
+    <section className="py-32 px-6 bg-black/20 border-y border-white/5">
       <div className="container mx-auto">
-        <h2 className="text-4xl md:text-5xl font-black text-white text-center mb-16 tracking-tighter">
-          CONNECT IN SECONDS
-        </h2>
+        <div className="flex flex-col md:flex-row md:items-center justify-between mb-20 gap-4">
+          <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter uppercase italic">
+            DEPLOYMENT <br /> PROTOCOL
+          </h2>
+          <div className="h-px flex-grow bg-white/10 mx-8 hidden md:block" />
+          <div className="text-[10px] font-mono text-cyan-400 font-bold tracking-[0.3em] uppercase">
+            // 04_SIMPLE_STEPS
+          </div>
+        </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {STEPS.map((step, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
               viewport={{ once: true }}
-              className="relative group"
+              className="p-8 border border-white/5 bg-white/[0.02] relative group"
             >
-              <div className="text-8xl font-black text-white/5 absolute -top-10 -left-4 group-hover:text-cyan-500/10 transition-colors pointer-events-none">
+              <div className="text-4xl font-black text-white/5 mb-8 font-mono group-hover:text-cyan-500/10 transition-colors">
                 {step.id}
               </div>
-              <div className="relative z-10 pt-10">
-                <h4 className="text-xl font-bold text-white mb-2">{step.title}</h4>
-                <p className="text-slate-500">{step.text}</p>
-              </div>
-              {idx < STEPS.length - 1 && (
-                <div className="hidden lg:block absolute top-[60%] -right-4 w-8 h-px bg-white/10" />
-              )}
+              <h4 className="text-lg font-black text-white mb-3 uppercase tracking-tight italic group-hover:text-cyan-400 transition-colors">
+                {step.title}
+              </h4>
+              <p className="text-slate-500 text-sm font-medium leading-relaxed">
+                {step.text}
+              </p>
+              
+              <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-cyan-500 group-hover:w-full transition-all duration-700" />
             </motion.div>
           ))}
         </div>

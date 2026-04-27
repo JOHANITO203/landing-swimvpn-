@@ -4,8 +4,8 @@ import { useFrame, useLoader } from '@react-three/fiber';
 import { Html } from '@react-three/drei';
 import { latLonToVector3, CITIES, createArcCurve } from './globeUtils';
 
-const GLOBE_RADIUS = 1.4;
-const POINTS_COUNT = 350000; // Slightly reduced for cleaner look
+const GLOBE_RADIUS = 1.0;
+const POINTS_COUNT = 250000; // Slightly reduced for cleaner look
 const CLOUD_COUNT = 10000;
 
 export const GlobeAtmosphere = () => {
@@ -203,15 +203,15 @@ export const GlobeMarkers = () => {
             </mesh>
 
             {city.hasHUD && (
-              <Html distanceFactor={6} position={[0, 0.08, 0]}>
-                <div className="pointer-events-none select-none opacity-60">
+              <Html distanceFactor={8} position={[0, 0.1, 0]} center>
+                <div className="pointer-events-none select-none opacity-90 transition-opacity">
                   {/* Ultra-minimal HUD Label */}
-                  <div className="text-cyan-400 font-mono text-[9px] tracking-[0.2em] text-center uppercase">
-                    <div className="font-bold flex items-center justify-center gap-1.5 mb-1">
+                  <div className="text-cyan-400 font-mono text-[9px] tracking-[0.2em] text-center uppercase whitespace-nowrap">
+                    <div className="font-bold flex items-center justify-center gap-1.5 mb-1 text-glow-cyan">
                       <span className="w-1 h-1 bg-cyan-400 rounded-full" />
                       {city.name}
                     </div>
-                    <div className="text-[7px] opacity-40">
+                    <div className="text-[7px] font-medium opacity-60">
                       {city.ping}MS / {city.status}
                     </div>
                   </div>
@@ -357,7 +357,7 @@ export const GlobeCloud = () => {
 
 export const HologramDevice = () => {
   return (
-    <group position={[0, -GLOBE_RADIUS * 1.6, 0]} rotation={[Math.PI / 12, 0, 0]}>
+    <group position={[0, -GLOBE_RADIUS * 1.5, 0]} rotation={[Math.PI / 12, 0, 0]}>
       {/* Phone Body - Ultra-minimal semi-transparent glass aesthetic */}
       <mesh position={[0, -0.05, 0]}>
         <boxGeometry args={[1.2, 0.03, 2.2]} />
